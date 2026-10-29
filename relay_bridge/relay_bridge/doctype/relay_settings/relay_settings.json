@@ -1,0 +1,50 @@
+{
+  "doctype": "DocType",
+  "name": "Relay Settings",
+  "module": "Relay Bridge",
+  "issingle": 1,
+  "track_changes": 1,
+  "field_order": [
+    "enabled",
+    "relay_url",
+    "relay_connection_id",
+    "signing_secret",
+    "setup_notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "enabled",
+      "label": "Enable Relay",
+      "fieldtype": "Check",
+      "default": "0"
+    },
+    {
+      "fieldname": "relay_url",
+      "label": "Relay HTTPS URL",
+      "fieldtype": "Data",
+      "description": "Example: https://relay.example.com. Relay must be deployed separately from this Frappe app."
+    },
+    {
+      "fieldname": "relay_connection_id",
+      "label": "ERP connection ID in Relay",
+      "fieldtype": "Data",
+      "description": "Use a separate connection ID and signing secret for each ERPNext site."
+    },
+    {
+      "fieldname": "signing_secret",
+      "label": "Integration signing secret",
+      "fieldtype": "Password",
+      "description": "Matches integrationSecret in the Relay ERP connection. Minimum 32 random characters; never place it in Client Scripts."
+    },
+    {
+      "fieldname": "setup_notes",
+      "fieldtype": "HTML",
+      "options": "<p>Save settings, then Test Relay configuration. Templates, PDF mode, Print Formats and WhatsApp transport are managed only by the Relay administrator. Disable the old Relay handoff Client Scripts to avoid duplicate buttons.</p>"
+    }
+  ],
+  "permissions": [
+    { "role": "System Manager", "read": 1, "write": 1, "create": 1 }
+  ],
+  "links": [],
+  "actions": []
+}

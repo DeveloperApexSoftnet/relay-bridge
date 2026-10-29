@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "relay_bridge"
+version = "0.2.0"
+description = "Authenticated ERPNext-to-Relay messaging bridge"
+requires-python = ">=3.10"
+dependencies = ["requests>=2.31"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["relay_bridge*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.json", "*.js"]
+relay_bridge = ["public/js/*.js", "modules.txt"]
