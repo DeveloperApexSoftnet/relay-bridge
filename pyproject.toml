@@ -9,6 +9,10 @@ description = "Authenticated ERPNext-to-Relay messaging bridge"
 requires-python = ">=3.10"
 dependencies = ["requests>=2.31"]
 
+# Supported framework majors; Frappe is provided by the bench, not pip.
+[tool.bench.frappe-dependencies]
+frappe = ">=15.0.0,<17.0.0"
+
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["relay_bridge*"]
