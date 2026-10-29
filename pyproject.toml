@@ -15,4 +15,4 @@ include = ["relay_bridge*"]
 
 [tool.setuptools.package-data]
 "*" = ["*.json", "*.js"]
-relay_bridge = ["public/js/*.js", "modules.txt"]
+relay_bridge = ["public/js/*.js", "modules.txt", "patches.txt"]
